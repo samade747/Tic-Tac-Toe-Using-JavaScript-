@@ -6,7 +6,12 @@ let changeTurn = ()=>{
 
 // function for check if a win
 let checkWin = () =>{
+    let wins = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
 
+    ]
 }
 
 // Game Logic 
@@ -18,6 +23,7 @@ Array.from(boxes).forEach(element =>{
         if(boxtext.innerText === ''){
             boxtext.innerText = turn;
             turn = changeTurn();
+            checkWin();
             document.getElementsByClassName('turn')[0].innerText = 'Turn for' + turn;
         }
     });
