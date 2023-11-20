@@ -67,14 +67,11 @@
     margin: 10px;
 }
 
-/* @media screen and (min-width: 965px) {
-    Inner-game{
-        display: grid;
-        grid-template-rows: repeat(3, 10vw);
-        grid-template-columns: repeat(3, 10vw);
-        width: auto;
+@media screen and (min-width: 965px) {
+    .Inner-game{
+        flex-wrap: wrap;
     }
-  } */
+  }
 
 
 

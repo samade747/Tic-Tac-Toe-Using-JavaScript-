@@ -45,9 +45,12 @@ Array.from(boxes).forEach(element =>{
 });
 
 // onlick adding listner for reset button
-reset.addEventListener('clicl', ()=> {
-    let boxtexts = element.querySelector('reset');
+reset.addEventListener('click', ()=> {
+    let boxtexts = document.querySelectorAll('.boxtext');
     Array.from(boxtexts).forEach(element =>{
-     element.innerText = ''
-    })
-}
+        element.innerText = "";
+    });
+    turn = 'X';
+    gameover = false;
+    document.querySelector('turn').innerText = 'Turn for' + turn;
+});
