@@ -26,7 +26,8 @@ let checkWin = () =>{
         if((boxtexts[win[0]].innerText === boxtexts[win[1]].innerText) &&
           (boxtexts[win[2]].innerText === boxtexts[win[1]].innerText) &&
           (boxtexts[win[0]].innerText !== '')){
-            document.querySelector('.info').innerText = turn + 'won';
+            let winner = boxtexts[win[0]].innerText;
+            document.querySelector('.info').innerText = winner + 'won';
             gameover = true;
             setTimeout(resetGame, 2000);
             return;
