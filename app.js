@@ -26,9 +26,9 @@ let checkWin = () =>{
         if((boxtexts[win[0]].innerText === boxtexts[win[1]].innerText) &&
           (boxtexts[win[2]].innerText === boxtexts[win[1]].innerText) &&
           (boxtexts[win[0]].innerText !== '')){
-            document.querySelector('.info').innerText = boxtexts[win[0]].innerText + 'won';
+            document.querySelector('.info').innerText = turn + 'won';
             gameover = true;
-            setTimeout(resetGame, 3000);
+            setTimeout(resetGame, 2000);
             return;
         }
     }
