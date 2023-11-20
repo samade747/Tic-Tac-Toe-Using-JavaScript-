@@ -1,8 +1,11 @@
 let turn = 'X'
+let gameover 
+let reset = document.getElementById('reset');
 
 let changeTurn = ()=>{
     return turn === 'X' ? '0' : 'X'
 }
+
 
 // function for check if a win
 let checkWin = () =>{
@@ -19,6 +22,7 @@ let checkWin = () =>{
     wins.forEach(e => {
         if((boxtexts[e[0]].innerText === boxtexts[e[1]].innerText) && (boxtexts[e[2]].innerText === boxtexts[e[1]].innerText) && (boxtexts[e[0]].innerText !== '')){
             document.querySelector('.info').innerText = boxtexts[e[0]].innerText + 'won';
+            gameover = true
         }
     })
 }
@@ -33,7 +37,17 @@ Array.from(boxes).forEach(element =>{
             boxtext.innerText = turn;
             turn = changeTurn();
             checkWin();
+            if(!gameover){
             document.getElementsByClassName('turn')[0].innerText = 'Turn for' + turn;
+            }
         }
     });
 });
+
+// onlick adding listner for reset button
+reset.addEventListener('clicl', ()=> {
+    let boxtexts = element.querySelector('reset');
+    Array.from(boxtexts).forEach(element =>{
+     element.innerText = ''
+    })
+}
