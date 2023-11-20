@@ -29,7 +29,7 @@ let checkWin = () =>{
             let winner = boxtexts[win[0]].innerText;
             document.querySelector('.info').innerText = winner + 'won';
             gameover = true;
-            setTimeout(resetGame, 2000);
+            setTimeout(resetGame, 3000);
             return;
         }
     }
