@@ -17,15 +17,23 @@ let checkWin = () =>{
         [0, 3, 6],
         [1, 4, 7],
         [2, 5, 8],
+        [0, 4, 8],
         [2, 4, 6]
     ]
-    wins.forEach(e => {
-        if((boxtexts[e[0]].innerText === boxtexts[e[1]].innerText) && (boxtexts[e[2]].innerText === boxtexts[e[1]].innerText) && (boxtexts[e[0]].innerText !== '')){
-            document.querySelector('.info').innerText = boxtexts[e[0]].innerText + 'won';
-            gameover = true
+    
+    
+    for (let win of wins){
+        if((boxtexts[win[0]].innerText === boxtexts[win[1]].innerText) &&
+          (boxtexts[win[2]].innerText === boxtexts[win[1]].innerText) &&
+          (boxtexts[win[0]].innerText !== '')){
+            document.querySelector('.info').innerText = boxtexts[win[0]].innerText + 'won';
+            gameover = true;
+            setTimeout(resetGame, 3000);
+            return;
         }
-    })
+    }
 }
+
 
 // Game Logic 
 
@@ -45,12 +53,15 @@ Array.from(boxes).forEach(element =>{
 });
 
 // onlick adding listner for reset button
-reset.addEventListener('click', ()=> {
+reset.addEventListener('click', resetGame);
+
+function resetGame(){
     let boxtexts = document.querySelectorAll('.boxtext');
     Array.from(boxtexts).forEach(element =>{
         element.innerText = "";
     });
     turn = 'X';
     gameover = false;
+    document.querySelector('.info').innerText = 'playagain';
     document.querySelector('turn').innerText = 'Turn for' + turn;
-});
+};
