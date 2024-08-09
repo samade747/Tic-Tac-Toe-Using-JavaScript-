@@ -18,6 +18,7 @@
     display: grid;
     grid-template-rows: repeat(3, 11vw);
     grid-template-columns: repeat(3, 11vw);
+    border: 10px solid rgb(255, 0, 0);
 
 }
 
